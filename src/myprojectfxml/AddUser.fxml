@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="844.0" prefWidth="1587.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myprojectfxml.AddUserController">
+   <children>
+      <GridPane layoutX="14.0" layoutY="118.0" prefHeight="682.0" prefWidth="684.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Name" />
+            <Label text="Address" GridPane.rowIndex="1" />
+            <Label text="gender" GridPane.rowIndex="3" />
+            <Label text="Username" GridPane.rowIndex="4" />
+            <Label text="password" GridPane.rowIndex="5" />
+            <Label text="Type" GridPane.rowIndex="6" />
+            <Label text="DOB" GridPane.rowIndex="7" />
+            <Button fx:id="del_btn" disable="true" mnemonicParsing="false" onAction="#del_btn" prefHeight="31.0" prefWidth="189.0" text="Delete" GridPane.rowIndex="8" />
+            <Button fx:id="upd_btn" disable="true" mnemonicParsing="false" onAction="#update_btn" prefHeight="31.0" prefWidth="193.0" text="Update" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Button mnemonicParsing="false" onAction="#save_btn" prefHeight="31.0" prefWidth="198.0" text="Save" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Button mnemonicParsing="false" onAction="#search_name_btn" prefHeight="31.0" prefWidth="165.0" text="Search" GridPane.columnIndex="2" />
+            <TextField fx:id="unamebox" GridPane.columnIndex="1" />
+            <TextArea fx:id="addressbox" prefHeight="41.0" prefWidth="239.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="usernamebox" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Button mnemonicParsing="false" onAction="#fetch_username_btn" prefHeight="31.0" prefWidth="194.0" text="fetch" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <ComboBox fx:id="usertype_listbox" prefHeight="31.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <DatePicker fx:id="DobBox" prefHeight="31.0" prefWidth="242.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <HBox prefHeight="55.0" prefWidth="228.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <children>
+                  <RadioButton fx:id="malebox" mnemonicParsing="false" text="Male">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="gendergroup" />
+                     </toggleGroup></RadioButton>
+                  <RadioButton fx:id="femalebox" mnemonicParsing="false" text="Female" toggleGroup="$gendergroup">
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </RadioButton>
+               </children>
+               <GridPane.margin>
+                  <Insets top="10.0" />
+               </GridPane.margin>
+            </HBox>
+            <Label text="Phone Number" GridPane.rowIndex="2" />
+            <TextField fx:id="phnobox" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <PasswordField fx:id="passwordbox" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <Label layoutX="465.0" layoutY="20.0" prefHeight="85.0" prefWidth="330.0" text="Add User" wrapText="true">
+         <font>
+            <Font name="Sitka Text Italic" size="63.0" />
+         </font>
+      </Label>
+      <TableView fx:id="usertable" layoutX="726.0" layoutY="341.0" prefHeight="489.0" prefWidth="587.0">
+        <columns>
+          <TableColumn fx:id="name_col" prefWidth="102.0" text="Name" />
+          <TableColumn fx:id="address_col" prefWidth="90.0" text="Address" />
+            <TableColumn fx:id="gender_col" prefWidth="122.0" text="Gender" />
+            <TableColumn fx:id="username_col" prefWidth="107.0" text="Username" />
+            <TableColumn fx:id="type_col" minWidth="0.0" prefWidth="165.0" text="Type" />
+        </columns>
+      </TableView>
+      <ImageView fx:id="userImgView" fitHeight="217.0" fitWidth="250.0" layoutX="726.0" layoutY="118.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../empimages/defaultimage.jpg" />
+         </image></ImageView>
+      <Button layoutX="1033.0" layoutY="202.0" mnemonicParsing="false" onAction="#uploadImgBtn" prefHeight="66.0" prefWidth="228.0" text="Upload" />
+   </children>
+</AnchorPane>

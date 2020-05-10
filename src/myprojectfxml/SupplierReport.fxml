@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="mainpane" prefHeight="771.0" prefWidth="944.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="myprojectfxml.SupplierReportController">
+   <children>
+      <Label layoutX="330.0" layoutY="28.0" prefHeight="82.0" prefWidth="372.0" text="Purchase Report">
+         <font>
+            <Font size="50.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="122.0" prefHeight="46.0" prefWidth="181.0" text="purchase Id">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="purIdBox" layoutX="226.0" layoutY="122.0" prefHeight="46.0" prefWidth="181.0" text="---">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <Label layoutX="462.0" layoutY="122.0" prefHeight="46.0" prefWidth="181.0" text="Supplier Name">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Label>
+      <Label fx:id="suppnamebox" layoutX="676.0" layoutY="122.0" prefHeight="46.0" prefWidth="181.0" text="---">
+         <font>
+            <Font name="System Bold" size="29.0" />
+         </font>
+      </Label>
+      <TableView fx:id="supplierReprtTable" layoutX="25.0" layoutY="168.0" prefHeight="416.0" prefWidth="906.0">
+        <columns>
+          <TableColumn fx:id="pname_col" prefWidth="254.0" text="Product Name" />
+          <TableColumn fx:id="price_col" prefWidth="203.0" text="Price" />
+            <TableColumn fx:id="qty_col" prefWidth="141.0" text="Quantity" />
+            <TableColumn fx:id="totalPrice_col" prefWidth="141.0" text="Total Price" />
+            <TableColumn fx:id="billDate_col" prefWidth="166.0" text="Bill Date" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
